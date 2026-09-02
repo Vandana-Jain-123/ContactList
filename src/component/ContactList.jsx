@@ -7,14 +7,7 @@ const ContactList = ({ allData, deleteData ,selectData}) => {
   console.log(allData, "imgs");
 
 
-  // const selectData=(id)=>{
 
-  //   const selectedUser=allData.find((e)=>e.id==id)
-
-  //    console.log(selectedUser,"singke user")
-
-  //    navigate("/");
-  // }
 
   return (
     <>
