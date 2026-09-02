@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "./contactForm.css";
 import { useNavigate } from "react-router-dom";
 
-const ContactForm = ({ getFormData, allData, select,setAllData }) => {
+const ContactForm = ({ getFormData, allData, select, setAllData }) => {
   const navigate = useNavigate();
 
   // const [allData,setAllData]=useState([])
@@ -16,23 +16,19 @@ const ContactForm = ({ getFormData, allData, select,setAllData }) => {
     image: null,
   });
 
-// useEffect(() => {
-//   if (select && select.id) {
-//     setUserInputDetails(select);
-//     console.log(userInputDetails,"pppppppppppppppppppppppppppppp")
-//    }
-  
-// }, [select]);
-
-
-
+  useEffect(() => {
+    if (select && select.id) {
+      setUserInputDetails(select);
+      console.log(userInputDetails, "pppppppppppppppppppppppppppppp");
+    }
+  }, [select]);
 
   const handleUpdate = () => {
-    const editData = allData.map((e) =>  e.id == userInputDetails.id ? userInputDetails:e )
-
+    const editData = allData.map((e) =>
+      e.id == userInputDetails.id ? userInputDetails : e,
+    );
+    setAllData(editData);
     navigate("/contact-list");
-    // setAllData( editData)
-
   };
 
   // handle Input function
